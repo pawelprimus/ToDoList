@@ -1,11 +1,11 @@
-package primrimprim;
+package primrim;
 
 
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextArea;
-import primrimprim.datamodel.TodoItem;
+import primrim.datamodel.TodoItem;
 
 import java.time.LocalDate;
 import java.time.Month;

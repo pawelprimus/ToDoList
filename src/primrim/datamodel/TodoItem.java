@@ -1,4 +1,4 @@
-package primrimprim.datamodel;
+package primrim.datamodel;
 
 import java.time.LocalDate;
 
