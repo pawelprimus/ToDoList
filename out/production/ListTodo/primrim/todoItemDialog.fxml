@@ -1,0 +1,10 @@
+
+<?import javafx.scene.control.DialogPane?>
+<DialogPane fx:controller="primrim.DialogController"
+            xmlns:fx="http://javafx.com/fxml" >
+    <headerText>
+        We could put instructions here
+    </headerText>
+
+
+</DialogPane>
