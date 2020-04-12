@@ -38,9 +38,11 @@ public class TodoItem {
         this.deadline = deadline;
     }
 
+
+/*
     @Override  // To see short description not ## in the list view
     public String toString() {
         return shortDescription;
-    }
+    }*/
 }
 

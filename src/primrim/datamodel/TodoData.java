@@ -1,6 +1,7 @@
 package primrim.datamodel;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -11,13 +12,13 @@ import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Iterator;
-import java.util.List;
 
 public class TodoData {
     private static TodoData instance = new TodoData();
     private static String filename = "TodoListItems.txt";
 
-    private List<TodoItem> todoItems;
+    private ObservableList<TodoItem> todoItems;
+//    private List<TodoItem> todoItems;
     private DateTimeFormatter formatter;
 
     public static TodoData getInstance() {
@@ -28,9 +29,14 @@ public class TodoData {
         formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
     }
 
-    public List<TodoItem> getTodoItems() {
+    public ObservableList<TodoItem> getTodoItems() {
         return todoItems;
     }
+
+    public void addTodoItem(TodoItem item) {
+        todoItems.add(item);
+    }
+
 
 /*    public void setTodoItems(List<TodoItem> todoItems) {
         this.todoItems = todoItems;
@@ -82,9 +88,11 @@ public class TodoData {
             if (bw != null) {
                 bw.close();
             }
-
         }
+    }
 
+    public void deleteTodoItem(TodoItem item) {
+        todoItems.remove(item);
     }
 
 
