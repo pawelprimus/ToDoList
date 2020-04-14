@@ -18,14 +18,14 @@ public class TodoData {
     private static String filename = "TodoListItems.txt";
 
     private ObservableList<TodoItem> todoItems;
-//    private List<TodoItem> todoItems;
+    //    private List<TodoItem> todoItems;
     private DateTimeFormatter formatter;
 
     public static TodoData getInstance() {
         return instance;
     }
 
-    private TodoData(){
+    private TodoData() {
         formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
     }
 
@@ -50,7 +50,7 @@ public class TodoData {
         String input;
 
         try {
-            while ((input = br.readLine()  )!= null) {
+            while ((input = br.readLine()) != null) {
                 String[] itemPieces = input.split("\t");
 
                 String shortDescription = itemPieces[0];
@@ -63,7 +63,7 @@ public class TodoData {
 
             }
         } finally {
-            if (br != null){
+            if (br != null) {
                 br.close();
             }
         }
@@ -75,7 +75,7 @@ public class TodoData {
         BufferedWriter bw = Files.newBufferedWriter(path);
         try {
             Iterator<TodoItem> iter = todoItems.iterator();
-            while(iter.hasNext()) {
+            while (iter.hasNext()) {
                 TodoItem item = iter.next();
                 bw.write(String.format("%s\t%s\t%s",
                         item.getShortDescription(),
@@ -94,7 +94,6 @@ public class TodoData {
     public void deleteTodoItem(TodoItem item) {
         todoItems.remove(item);
     }
-
 
 
 }
